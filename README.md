@@ -13,6 +13,7 @@ This is a Node Red project that will send an SMS via twilio API when a motion is
 * Goto Flow 1 tab
 * Option > Import > Clipboard
 * Modify the twilio node with appropriate settings from your twilio acocunt
+* PIR sensor is connected to PIN 7 of the RPi
 * Deploy and Ready to go!
 
 
