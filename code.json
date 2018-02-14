@@ -1,0 +1,69 @@
+[
+    {
+        "id": "36c90650.2d78da",
+        "type": "rpi-gpio in",
+        "z": "cebd67b7.eaef78",
+        "name": "PIR",
+        "pin": "7",
+        "intype": "up",
+        "debounce": "25",
+        "read": false,
+        "x": 319,
+        "y": 197,
+        "wires": [
+            [
+                "d8b0bb77.b47828"
+            ]
+        ]
+    },
+    {
+        "id": "30a3e44e.0d78ec",
+        "type": "debug",
+        "z": "cebd67b7.eaef78",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 829,
+        "y": 258,
+        "wires": []
+    },
+    {
+        "id": "d8b0bb77.b47828",
+        "type": "function",
+        "z": "cebd67b7.eaef78",
+        "name": "DateFunction",
+        "func": "if (msg.payload === 1){\n    var d = new Date();\n    msg.payload = \"Motion Detected at: \" + d.getHours() + \":\" + d.getMinutes();\n    \n}else{\n    return\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 545,
+        "y": 254,
+        "wires": [
+            [
+                "30a3e44e.0d78ec",
+                "53ba082b.4c9ff8"
+            ]
+        ]
+    },
+    {
+        "id": "53ba082b.4c9ff8",
+        "type": "twilio out",
+        "z": "cebd67b7.eaef78",
+        "twilio": "b23b047.0118ef8",
+        "twilioType": "sms",
+        "url": "",
+        "number": "",
+        "name": "",
+        "x": 816.5,
+        "y": 363,
+        "wires": []
+    },
+    {
+        "id": "b23b047.0118ef8",
+        "type": "twilio-api",
+        "z": "",
+        "name": "",
+        "sid": "",
+        "from": ""
+    }
+]
