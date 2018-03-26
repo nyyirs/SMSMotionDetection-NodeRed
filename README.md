@@ -6,6 +6,10 @@ This is a Node Red project that will send an SMS via twilio API when a motion is
 
 ![alt text](https://github.com/nyyirs/SMSMotionDetection-NodeRed/blob/master/FlowDiag.PNG?raw=true)
 
+## Demo
+
+![Alt Text](https://github.com/nyyirs/SMSMotionDetection-NodeRed/blob/master/demo.gif)
+
 ## How to use code.json file
 
 * Create a Twilio account
